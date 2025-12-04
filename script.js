@@ -1,6 +1,9 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* =========================
+     CREATE GIG FORM (demo)
+     ========================= */
   const form = document.getElementById("createGigForm");
 
   if (form) {
@@ -17,27 +20,39 @@ document.addEventListener("DOMContentLoaded", () => {
           "Check the browser console to see the captured data."
       );
 
-      // Optional: reset form for now
       form.reset();
     });
   }
-});
 
-const toggle = document.querySelector(".nav-toggle");
-const panel = document.querySelector("#landingMobilePanel");
+  /* =========================
+     UNIVERSAL HAMBURGER NAV
+     Works for:
+     - landing page (.landing-mobile-panel)
+     - other pages (.mobile-panel)
+     ========================= */
+  document.querySelectorAll(".nav-toggle").forEach((toggle) => {
+    const header = toggle.closest("header") || document.body;
 
-if (toggle && panel) {
-  toggle.addEventListener("click", () => {
-    const open = panel.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    panel.setAttribute("aria-hidden", open ? "false" : "true");
+    // find whichever panel exists on that page
+    const panel =
+      header.querySelector(".mobile-panel") ||
+      header.querySelector(".landing-mobile-panel");
+
+    if (!panel) return;
+
+    toggle.addEventListener("click", () => {
+      const open = panel.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.setAttribute("aria-hidden", open ? "false" : "true");
+    });
+
+    // close menu after tapping a link
+    panel.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        panel.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        panel.setAttribute("aria-hidden", "true");
+      })
+    );
   });
-
-  panel.querySelectorAll("a").forEach(a =>
-    a.addEventListener("click", () => {
-      panel.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      panel.setAttribute("aria-hidden", "true");
-    })
-  );
-}
+});

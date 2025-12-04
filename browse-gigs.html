@@ -10,15 +10,32 @@
 <body class="sleek-app page-browse">
   <!-- Sleek top nav -->
   <header class="landing-nav">
-    <a href="index.html" class="landing-logo">Gigga</a>
+  <a href="index.html" class="landing-logo">Gigga</a>
 
-    <nav class="landing-links">
-      <a href="index.html" class="landing-link">Home</a>
-      <a href="browse-gigs.html" class="landing-link active">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
-      <a href="login.html" class="landing-link">Log in</a>
-    </nav>
-  </header>
+  <!-- ADD THIS hamburger button -->
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+
+  <!-- your EXISTING desktop links stay exactly the same -->
+  <nav class="landing-links">
+    <a href="index.html" class="landing-link">Home</a>
+    <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+    <a href="create-gig.html" class="landing-link">Post a Gig</a>
+    <a href="login.html" class="landing-link">Log in</a>
+  </nav>
+
+  <!-- ADD THIS mobile panel (copy same links; no new ones) -->
+  <nav class="mobile-panel" aria-hidden="true">
+    <a href="index.html" class="landing-link">Home</a>
+    <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+    <a href="create-gig.html" class="landing-link">Post a Gig</a>
+    <a href="login.html" class="landing-link">Log in</a>
+  </nav>
+</header>
+
 
   <main class="sleek-main">
     <div class="bg-orb orb-1"></div>

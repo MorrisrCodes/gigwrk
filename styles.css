@@ -1320,3 +1320,131 @@ html, body {
   }
 }
 
+/* ===== Shared hamburger for ALL pages using landing-nav ===== */
+
+/* hidden on desktop */
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* stack bars */
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+/* mobile dropdown panel */
+.mobile-panel {
+  position: fixed;
+  top: 72px;            /* just under your fixed nav */
+  left: 12px;
+  right: 12px;
+  background: rgba(3, 7, 18, 0.98);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 0.6rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.2rem;
+  z-index: 110;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+
+.mobile-panel.open {
+  display: flex;
+}
+
+/* stacked links */
+.mobile-panel .landing-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+/* phones only */
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-flex; }
+  .landing-links { display: none; } /* hide desktop row only on mobile */
+}
+
+/* =========================================
+   STOP EXTRA OVERSCROLL ON SLEEK PAGES
+   (browse / post / signup host / signup runner)
+   ========================================= */
+
+.sleek-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Make main take remaining height, not force extra space */
+.sleek-app .sleek-main {
+  flex: 1;
+  min-height: auto;      /* overrides min-height:100vh */
+  padding-bottom: 2rem;  /* small breathing room before footer */
+}
+
+/* Footer naturally sits at bottom */
+.sleek-app .landing-footer {
+  margin-top: auto;
+}
+
+/* Background layers should NOT affect scroll height */
+.sleek-app .bg-orb,
+.sleek-app .bg-grid {
+  position: fixed;   /* instead of absolute */
+  inset: auto;       /* neutralize large inset values */
+  pointer-events: none;
+}
+
+/* =========================================================
+   SEAMLESS SLEEK BACKGROUND BEHIND MAIN + FOOTER
+   (removes footer band / mismatched strip)
+   ========================================================= */
+
+/* Put one shared gradient behind the whole sleek page */
+body.sleek-app {
+  position: relative;
+  background: transparent !important; /* stop body solid color */
+}
+
+body.sleek-app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1200px circle at 10% 10%, #7c3aed44 0%, transparent 55%),
+    radial-gradient(1000px circle at 90% 10%, #06b6d444 0%, transparent 50%),
+    radial-gradient(1200px circle at 50% 100%, #f59e0b33 0%, transparent 60%),
+    linear-gradient(145deg, #05060a 0%, #0a0d16 45%, #05060a 100%);
+}
+
+/* Let main + footer be transparent so they sit on that one layer */
+body.sleek-app .sleek-main {
+  background: transparent !important;
+}
+
+body.sleek-app .landing-footer {
+  background: transparent !important;
+  border-top: none !important; /* remove any hard seam line */
+}
+
