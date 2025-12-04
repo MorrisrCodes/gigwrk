@@ -22,3 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const toggle = document.querySelector(".nav-toggle");
+const panel = document.querySelector("#landingMobilePanel");
+
+if (toggle && panel) {
+  toggle.addEventListener("click", () => {
+    const open = panel.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    panel.setAttribute("aria-hidden", open ? "false" : "true");
+  });
+
+  panel.querySelectorAll("a").forEach(a =>
+    a.addEventListener("click", () => {
+      panel.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      panel.setAttribute("aria-hidden", "true");
+    })
+  );
+}
