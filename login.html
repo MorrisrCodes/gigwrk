@@ -2,61 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Gigga – Big help doesn’t need big companies</title>
+  <title>Log in – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="page-landing simple-landing">
-  <!-- Top nav (landing only) -->
+<body class="sleek-app page-auth">
   <header class="landing-nav">
     <a href="index.html" class="landing-logo">Gigga</a>
-
     <nav class="landing-links">
-      <a href="index.html" class="landing-link active">Home</a>
+      <a href="index.html" class="landing-link">Home</a>
       <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
       <a href="create-gig.html" class="landing-link">Post a Gig</a>
-      <a href="login.html" class="landing-link">Log in</a>
+      <a href="login.html" class="landing-link active">Log in</a>
     </nav>
   </header>
 
-  <main class="landing-main">
-    <!-- Abstract background shapes -->
+  <main class="sleek-main auth-main">
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <div class="bg-orb orb-3"></div>
     <div class="bg-grid"></div>
 
-    <section class="landing-hero">
-      <p class="landing-eyebrow">ON-DEMAND GIGS • HUMAN FIRST</p>
+    <section class="auth-shell">
+      <header class="auth-header">
+        <p class="sleek-eyebrow">WELCOME BACK</p>
+        <h1 class="sleek-title">Log in</h1>
+        <p class="sleek-subtitle">Demo only for now.</p>
+      </header>
 
-      <h1 class="landing-title">
-        Big help doesn’t need big companies.
-      </h1>
+      <form class="auth-form" onsubmit="event.preventDefault();">
+        <label class="sleek-field full">
+          <span>Email</span>
+          <input type="email" placeholder="you@email.com" required />
+        </label>
 
-      <p class="landing-subtitle">
-        Post a gig. Get matched fast. Keep it human.
-      </p>
+        <label class="sleek-field full">
+          <span>Password</span>
+          <input type="password" placeholder="••••••••" required />
+        </label>
 
-      <div class="landing-actions">
-        <a href="signup-helpee.html" class="cta cta-primary">
-          Become a Gig Host
-        </a>
-        <a href="signup-helper.html" class="cta cta-ghost">
-          Become a Gig Runner
-        </a>
-      </div>
+        <div class="auth-actions">
+          <a href="helper-profile.html" class="cta cta-primary full">
+            Log in as Gig Runner
+          </a>
+          <a href="helpee-dashboard.html" class="cta cta-ghost full">
+            Log in as Gig Host
+          </a>
+        </div>
 
-      <p class="landing-footnote">
-        Auto-matching + notifications coming soon.
-      </p>
+        <div class="auth-footer">
+          <p>
+            New here?
+            <a href="signup-helpee.html">Become a Gig Host</a>
+            or
+            <a href="signup-helper.html">Become a Gig Runner</a>.
+          </p>
+        </div>
+      </form>
     </section>
   </main>
 
-  <footer class="landing-footer">
-    © 2025 Gigga
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="landing-footer">© 2025 Gigga</footer>
 </body>
 </html>

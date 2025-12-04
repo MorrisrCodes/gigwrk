@@ -2,46 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Join as Helpee – Luna</title>
+  <title>Become a Gig Host – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="page-auth">
-  <header class="navbar">
-    <div class="navbar-left"><a href="index.html" class="logo">Luna</a></div>
-    <nav class="navbar-right">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="browse-gigs.html" class="nav-link">Find Help</a>
-      <a href="create-gig.html" class="nav-link">Post Help</a>
+
+<body class="sleek-app page-auth">
+  <header class="landing-nav">
+    <a href="index.html" class="landing-logo">Gigga</a>
+    <nav class="landing-links">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
     </nav>
   </header>
 
-  <main class="main">
-    <section class="section auth-card">
-      <h1>Create Helpee account</h1>
-      <p class="subtitle">UI only. After signup you land in Helpee hub.</p>
+  <main class="sleek-main auth-main">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
 
-      <form class="auth-form" onsubmit="event.preventDefault(); location.href='helpee-dashboard.html';">
-        <label class="form-field">
-          <span class="label">Full name</span>
-          <input type="text" required />
+    <section class="auth-shell">
+      <header class="auth-header">
+        <p class="sleek-eyebrow">GIG HOST</p>
+        <h1 class="sleek-title">Create your account</h1>
+        <p class="sleek-subtitle">
+          Post gigs in seconds. The right Gig Runners will be matched soon.
+        </p>
+      </header>
+
+      <form
+        class="auth-form"
+        onsubmit="event.preventDefault(); location.href='helpee-dashboard.html';"
+      >
+        <label class="sleek-field full">
+          <span>Full name</span>
+          <input type="text" placeholder="Your name" required />
         </label>
-        <label class="form-field">
-          <span class="label">Email</span>
-          <input type="email" required />
+
+        <label class="sleek-field full">
+          <span>Email</span>
+          <input type="email" placeholder="you@email.com" required />
         </label>
-        <label class="form-field">
-          <span class="label">Password</span>
-          <input type="password" required />
+
+        <label class="sleek-field full">
+          <span>Password</span>
+          <input type="password" placeholder="Create a password" required />
         </label>
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Continue</button>
-          <a href="login.html" class="btn secondary">I already have an account</a>
+
+        <div class="auth-actions">
+          <button class="cta cta-primary full" type="submit">
+            Continue
+          </button>
+          <a href="login.html" class="cta cta-ghost full">
+            I already have an account
+          </a>
+        </div>
+
+        <div class="auth-footer">
+          <p>
+            Want to run gigs instead?
+            <a href="signup-helper.html">Become a Gig Runner</a>.
+          </p>
         </div>
       </form>
     </section>
   </main>
 
-  <footer class="footer"><p>© 2025 Luna</p></footer>
+  <footer class="landing-footer">© 2025 Gigga</footer>
 </body>
 </html>
