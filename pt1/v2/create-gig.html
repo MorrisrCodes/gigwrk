@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Post a Gig – Luna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-create">
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="logo">Luna</a>
+    </div>
+    <nav class="navbar-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="browse-gigs.html" class="nav-link">Find Help</a>
+      <a href="create-gig.html" class="nav-link active">Post Help</a>
+      <div class="nav-divider"></div>
+      <a href="helpee-dashboard.html" class="nav-link">Helpee Hub</a>
+      <a href="admin.html" class="nav-link nav-admin">Admin</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <h1>Post a gig (Helpee)</h1>
+      <p class="subtitle">
+        UI-only form. Submitting will redirect to a confirmation page.
+        Later this will save to a backend and trigger Helper matching.
+      </p>
+
+      <form class="form" id="createGigForm">
+        <div class="form-grid">
+          <label class="form-field">
+            <span class="label">Gig title</span>
+            <input type="text" name="title" placeholder="e.g., Move a couch tomorrow" required />
+          </label>
+
+          <label class="form-field">
+            <span class="label">Location</span>
+            <input type="text" name="location" placeholder="Remote, Atlanta, GA, etc." required />
+          </label>
+
+          <label class="form-field">
+            <span class="label">Schedule / date</span>
+            <input type="text" name="schedule" placeholder="e.g., Thu 3–6pm or Dec 5, 6pm–11pm" required />
+          </label>
+
+          <label class="form-field">
+            <span class="label">Pay range (optional)</span>
+            <div class="pay-row">
+              <input type="number" name="payMin" placeholder="Min ($)" min="0" />
+              <span class="pay-separator">to</span>
+              <input type="number" name="payMax" placeholder="Max ($)" min="0" />
+            </div>
+          </label>
+
+          <label class="form-field">
+            <span class="label">Type</span>
+            <select name="type" required>
+              <option value="">Select gig type</option>
+              <option value="onsite">On-site</option>
+              <option value="remote">Remote</option>
+              <option value="hybrid">Hybrid</option>
+            </select>
+          </label>
+
+          <label class="form-field">
+            <span class="label">Urgency</span>
+            <select name="urgency">
+              <option value="normal">Normal</option>
+              <option value="soon">Soon</option>
+              <option value="asap">ASAP</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form-field">
+          <span class="label">Gig description</span>
+          <textarea name="description" rows="4" placeholder="Describe tasks and expectations." required></textarea>
+        </label>
+
+        <label class="form-field">
+          <span class="label">Skills / experience needed</span>
+          <textarea name="skills" rows="3" placeholder="e.g., lifting 50lbs, customer service, Excel"></textarea>
+        </label>
+
+        <label class="form-field">
+          <span class="label">Personality preferences</span>
+          <textarea name="personality" rows="3" placeholder="e.g., friendly, calm, detail-oriented"></textarea>
+        </label>
+
+        <label class="form-field">
+          <span class="label">Availability requirements</span>
+          <textarea name="availability" rows="2" placeholder="e.g., must be available weekends"></textarea>
+        </label>
+
+        <label class="form-field">
+          <span class="label">Additional notes</span>
+          <textarea name="notes" rows="2" placeholder="Anything else Helpers should know."></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Submit gig (demo)</button>
+          <a class="btn secondary" href="helpee-dashboard.html" type="button">Cancel</a>
+        </div>
+
+        <p class="form-hint">
+          Later: this creates a gig + triggers auto-matching to Helpers.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Luna – MVP Prototype UI</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

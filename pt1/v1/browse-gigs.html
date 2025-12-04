@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browse Gigs – GigMatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-browse">
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="logo">GigMatch</a>
+    </div>
+    <nav class="navbar-right">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="create-gig.html" class="nav-link">Post a Gig</a>
+      <a href="browse-gigs.html" class="nav-link active">Browse Gigs</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="section-header">
+        <h1>Browse gigs</h1>
+        <p class="subtitle">
+          These are sample gigs. Eventually, this page will show personalized
+          matches based on your profile and preferences.
+        </p>
+      </div>
+
+      <div class="filters-row">
+        <input
+          type="text"
+          class="filter-input"
+          placeholder="Search by title, skill, or location (UI only)"
+        />
+        <select class="filter-select">
+          <option value="">All types</option>
+          <option value="remote">Remote</option>
+          <option value="onsite">On-site</option>
+        </select>
+        <select class="filter-select">
+          <option value="">Any pay</option>
+          <option value="hourly">Hourly</option>
+          <option value="flat">Flat rate</option>
+        </select>
+      </div>
+
+      <div class="gig-list">
+        <!-- Mock gig cards -->
+        <article class="gig-card">
+          <h2 class="gig-title">Event Photographer – Saturday Night</h2>
+          <p class="gig-meta">
+            <span>Downtown Atlanta, GA</span> •
+            <span>Sat, 6pm–11pm</span> •
+            <span>$200 flat</span>
+          </p>
+          <div class="gig-tags">
+            <span class="tag">Photography</span>
+            <span class="tag">On-site</span>
+            <span class="tag">Evening</span>
+          </div>
+          <p class="gig-description">
+            Looking for a friendly, reliable photographer to shoot a small
+            private event. Experience preferred, but not required.
+          </p>
+          <button class="btn primary" type="button">View details</button>
+        </article>
+
+        <article class="gig-card">
+          <h2 class="gig-title">Virtual Assistant for Busy Entrepreneur</h2>
+          <p class="gig-meta">
+            <span>Remote</span> •
+            <span>10–15 hrs/week, flexible</span> •
+            <span>$18–$22/hr</span>
+          </p>
+          <div class="gig-tags">
+            <span class="tag">Remote</span>
+            <span class="tag">Admin</span>
+            <span class="tag">Part-time</span>
+          </div>
+          <p class="gig-description">
+            Help manage email, scheduling, and simple research tasks.
+            Ideal for someone organized with good communication skills.
+          </p>
+          <button class="btn primary" type="button">View details</button>
+        </article>
+
+        <article class="gig-card">
+          <h2 class="gig-title">Weekend Pop-Up Booth Staff</h2>
+          <p class="gig-meta">
+            <span>Ponce City Market, Atlanta, GA</span> •
+            <span>Sat &amp; Sun, 10am–6pm</span> •
+            <span>$17/hr + commission</span>
+          </p>
+          <div class="gig-tags">
+            <span class="tag">Sales</span>
+            <span class="tag">On-site</span>
+            <span class="tag">Customer-facing</span>
+          </div>
+          <p class="gig-description">
+            Assist with greeting customers, handling payments, and
+            setting up/tearing down. Outgoing and energetic personality
+            is a plus.
+          </p>
+          <button class="btn primary" type="button">View details</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 GigMatch – Prototype UI</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

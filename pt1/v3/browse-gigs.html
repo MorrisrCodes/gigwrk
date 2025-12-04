@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Browse Gigs – Gigga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="sleek-app page-browse">
+  <!-- Sleek top nav -->
+  <header class="landing-nav">
+    <a href="index.html" class="landing-logo">Gigga</a>
+
+    <nav class="landing-links">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link active">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="sleek-main">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <section class="sleek-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">GIG RUNNER</p>
+          <h1 class="sleek-title">Browse gigs</h1>
+          <p class="sleek-subtitle">
+            These are sample gigs for now. Personalized matches coming soon.
+          </p>
+        </div>
+
+        <div class="sleek-pill">Demo</div>
+      </header>
+
+      <div class="sleek-filters">
+        <input
+          type="text"
+          placeholder="Search gigs (UI only)"
+          class="sleek-input"
+        />
+        <select class="sleek-select">
+          <option value="">All types</option>
+          <option value="remote">Remote</option>
+          <option value="onsite">On-site</option>
+          <option value="hybrid">Hybrid</option>
+        </select>
+        <select class="sleek-select">
+          <option value="">Any pay</option>
+          <option value="hourly">Hourly</option>
+          <option value="flat">Flat</option>
+        </select>
+
+        <a href="helper-profile.html" class="cta cta-ghost small">
+          Update profile
+        </a>
+      </div>
+
+      <div class="sleek-list">
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Help moving a couch (2 hours)</h2>
+            <span class="sleek-badge open">Open</span>
+          </div>
+          <p class="sleek-meta">Midtown Atlanta • Thu 4–6pm • $60 flat</p>
+          <p class="sleek-desc">
+            Need help lifting & loading a couch into a truck. Friendly attitude a plus.
+          </p>
+          <div class="sleek-tags">
+            <span>On-site</span><span>Light moving</span><span>ASAP</span>
+          </div>
+          <div class="sleek-actions-row">
+            <a class="cta cta-primary small" href="gig-details.html">View</a>
+            <button class="cta cta-ghost small" data-toast="Applied (demo).">
+              Apply
+            </button>
+          </div>
+        </article>
+
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Remote virtual assistant</h2>
+            <span class="sleek-badge open">Open</span>
+          </div>
+          <p class="sleek-meta">Remote • 10–15 hrs/week • $18–$22/hr</p>
+          <p class="sleek-desc">
+            Email, scheduling, and light research. Organized runners preferred.
+          </p>
+          <div class="sleek-tags">
+            <span>Remote</span><span>Admin</span><span>Part-time</span>
+          </div>
+          <div class="sleek-actions-row">
+            <a class="cta cta-primary small" href="gig-details.html">View</a>
+            <button class="cta cta-ghost small" data-toast="Applied (demo).">
+              Apply
+            </button>
+          </div>
+        </article>
+
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Weekend pop-up booth runner</h2>
+            <span class="sleek-badge open">Open</span>
+          </div>
+          <p class="sleek-meta">Ponce City Market • Sat–Sun • $17/hr + tips</p>
+          <p class="sleek-desc">
+            Assist customers, handle payments, set up / tear down. Energetic vibe welcome.
+          </p>
+          <div class="sleek-tags">
+            <span>On-site</span><span>Sales</span><span>Customer-facing</span>
+          </div>
+          <div class="sleek-actions-row">
+            <a class="cta cta-primary small" href="gig-details.html">View</a>
+            <button class="cta cta-ghost small" data-toast="Applied (demo).">
+              Apply
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">© 2025 Gigga</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Post a Gig – Gigga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="sleek-app page-create">
+  <!-- Sleek top nav -->
+  <header class="landing-nav">
+    <a href="index.html" class="landing-logo">Gigga</a>
+
+    <nav class="landing-links">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link active">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="sleek-main">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <section class="sleek-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">GIG HOST</p>
+          <h1 class="sleek-title">Post a gig</h1>
+          <p class="sleek-subtitle">
+            Share what you need help with. Matching comes soon.
+          </p>
+        </div>
+
+        <div class="sleek-pill">Demo</div>
+      </header>
+
+      <form class="sleek-form" id="createGigForm">
+        <div class="sleek-grid">
+          <label class="sleek-field">
+            <span>Gig title</span>
+            <input
+              type="text"
+              name="title"
+              placeholder="e.g., Move a couch tomorrow"
+              required
+            />
+          </label>
+
+          <label class="sleek-field">
+            <span>Location</span>
+            <input
+              type="text"
+              name="location"
+              placeholder="Remote, Atlanta, GA, etc."
+              required
+            />
+          </label>
+
+          <label class="sleek-field">
+            <span>Date / schedule</span>
+            <input
+              type="text"
+              name="schedule"
+              placeholder="Thu 4–6pm • or • Dec 5, 6–11pm"
+              required
+            />
+          </label>
+
+          <label class="sleek-field">
+            <span>Type</span>
+            <select name="type" required>
+              <option value="">Select type</option>
+              <option value="onsite">On-site</option>
+              <option value="remote">Remote</option>
+              <option value="hybrid">Hybrid</option>
+            </select>
+          </label>
+
+          <label class="sleek-field">
+            <span>Pay (optional)</span>
+            <div class="sleek-pay">
+              <input type="number" name="payMin" min="0" placeholder="Min $" />
+              <input type="number" name="payMax" min="0" placeholder="Max $" />
+            </div>
+          </label>
+
+          <label class="sleek-field">
+            <span>Urgency</span>
+            <select name="urgency">
+              <option value="normal">Normal</option>
+              <option value="soon">Soon</option>
+              <option value="asap">ASAP</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="sleek-field full">
+          <span>Description</span>
+          <textarea
+            name="description"
+            rows="4"
+            placeholder="What needs to get done? Be clear and simple."
+            required
+          ></textarea>
+        </label>
+
+        <label class="sleek-field full">
+          <span>Skills preferred (optional)</span>
+          <input
+            type="text"
+            name="skills"
+            placeholder="lifting, admin, photography, etc."
+          />
+        </label>
+
+        <label class="sleek-field full">
+          <span>Personality fit (optional)</span>
+          <input
+            type="text"
+            name="personality"
+            placeholder="friendly, calm, detail-oriented…"
+          />
+        </label>
+
+        <div class="sleek-actions">
+          <button class="cta cta-primary" type="submit">
+            Submit gig
+          </button>
+          <a class="cta cta-ghost" href="index.html">
+            Cancel
+          </a>
+        </div>
+
+        <p class="sleek-footnote">
+          Demo only — submission redirects but doesn’t save yet.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="landing-footer">© 2025 Gigga</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
