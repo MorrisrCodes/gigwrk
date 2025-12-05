@@ -2,61 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Helper Profile – Luna</title>
+  <title>Gig Runner Profile – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="page-create">
-  <header class="navbar">
-    <div class="navbar-left"><a href="index.html" class="logo">Luna</a></div>
-    <nav class="navbar-right">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="browse-gigs.html" class="nav-link active">Find Help</a>
-      <a href="create-gig.html" class="nav-link">Post Help</a>
-      <div class="nav-divider"></div>
-      <a href="admin.html" class="nav-link nav-admin">Admin</a>
+
+<body class="sleek-app page-profile">
+
+  <!-- Sleek header -->
+  <header class="landing-nav">
+    <a href="index.html" class="landing-logo">Gigga</a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <!-- Desktop links (same as your other pages) -->
+    <nav class="landing-links">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+
+    <!-- Mobile dropdown -->
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
     </nav>
   </header>
 
-  <main class="main">
-    <section class="section">
-      <h1>Helper profile builder</h1>
-      <p class="subtitle">UI only. This will feed the auto-matching engine later.</p>
+  <main class="sleek-main auth-main">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
 
-      <form class="form" id="helperProfileForm">
-        <div class="form-grid">
-          <label class="form-field">
-            <span class="label">Preferred pay</span>
-            <input type="text" name="payPref" placeholder="e.g., $20/hr minimum" />
+    <section class="sleek-shell auth-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">GIG RUNNER</p>
+          <h1 class="sleek-title">Your profile</h1>
+          <p class="sleek-subtitle">
+            Set your info once — matching will use this later.
+          </p>
+        </div>
+        <div class="sleek-pill">Demo</div>
+      </header>
+
+      <form
+        class="sleek-form"
+        onsubmit="event.preventDefault(); location.href='browse-gigs.html';"
+      >
+        <div class="sleek-grid">
+
+          <label class="sleek-field">
+            <span>Full name</span>
+            <input type="text" placeholder="Your name" required />
           </label>
-          <label class="form-field">
-            <span class="label">Availability</span>
-            <input type="text" name="availabilityPref" placeholder="Weekends, evenings, etc." />
+
+          <label class="sleek-field">
+            <span>Email</span>
+            <input type="email" placeholder="you@email.com" required />
           </label>
-          <label class="form-field">
-            <span class="label">Skills</span>
-            <input type="text" name="skillsPref" placeholder="Moving, admin, photography..." />
+
+          <label class="sleek-field">
+            <span>Location</span>
+            <input type="text" placeholder="City, state" />
           </label>
-          <label class="form-field">
-            <span class="label">Personality traits</span>
-            <input type="text" name="personalityPref" placeholder="Friendly, calm, detail-oriented..." />
+
+          <label class="sleek-field">
+            <span>Availability</span>
+            <input type="text" placeholder="Weekends, evenings, flexible…" />
           </label>
+
+          <label class="sleek-field full">
+            <span>Skills you want to run</span>
+            <input type="text" placeholder="moving, admin, deliveries, events, pet care…" />
+          </label>
+
+          <label class="sleek-field full">
+            <span>Short bio</span>
+            <textarea rows="4" placeholder="Tell hosts a bit about you."></textarea>
+          </label>
+
+          <label class="sleek-field full">
+            <span>Preferences / notes</span>
+            <textarea rows="3" placeholder="Anything we should match you with or avoid?"></textarea>
+          </label>
+
         </div>
 
-        <label class="form-field">
-          <span class="label">Bio</span>
-          <textarea name="bio" rows="4" placeholder="Tell Helpees about you."></textarea>
-        </label>
-
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Save profile (demo)</button>
-          <a href="browse-gigs.html" class="btn secondary">Back to gigs</a>
+        <div class="sleek-actions">
+          <button class="cta cta-primary" type="submit">Save profile</button>
+          <a href="browse-gigs.html" class="cta cta-ghost">Cancel</a>
         </div>
+
+        <p class="sleek-footnote">
+          Demo only — profile doesn’t save yet.
+        </p>
       </form>
     </section>
   </main>
 
-  <footer class="footer"><p>© 2025 Luna</p></footer>
-  <script src="script.js"></script>
-</body>
-</html>
+  <footer class="landing-footer
