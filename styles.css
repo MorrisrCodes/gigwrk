@@ -288,8 +288,8 @@ body {
   position: relative;
 }
 
-.info-card:nth-child(1)::before { content: "FOR HELPEES"; }
-.info-card:nth-child(2)::before { content: "FOR HELPERS"; }
+.info-card:nth-child(1)::before { content: "FOR HOSTS"; }
+.info-card:nth-child(2)::before { content: "FOR RUNNERS"; }
 .info-card:nth-child(3)::before { content: "EXTRAS"; }
 
 .info-card::before {

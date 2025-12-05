@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gig Runner Dashboard – Gigga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="sleek-app page-dashboard">
+
+  <!-- Sleek header (same as your other sleek pages) -->
+  <header class="landing-nav">
+    <a href="index.html" class="landing-logo">Gigga</a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <!-- Desktop links -->
+    <nav class="landing-links">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+
+    <!-- Mobile dropdown -->
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="sleek-main">
+    <!-- Background layers -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <section class="sleek-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">GIG RUNNER</p>
+          <h1 class="sleek-title">Your dashboard</h1>
+          <p class="sleek-subtitle">
+            For demo: applying auto-accepts you into a gig.
+          </p>
+        </div>
+        <div class="sleek-pill">Demo</div>
+      </header>
+
+      <div class="sleek-list">
+
+        <!-- Active / Accepted gig card -->
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Active gig</h2>
+            <span class="sleek-badge open">Accepted</span>
+          </div>
+
+          <!-- DEMO PLACEHOLDER CONTENT
+               Next step we’ll fill this from localStorage -->
+          <p class="sleek-meta">
+            Help moving a couch • Midtown Atlanta • Thu 4–6pm
+          </p>
+          <p class="sleek-desc">
+            You’ve been auto-accepted for this gig (demo flow).  
+            When the gig is “complete”, you’ll rate the host.
+          </p>
+
+          <div class="sleek-tags">
+            <span>On-site</span>
+            <span>Light moving</span>
+            <span>ASAP</span>
+          </div>
+
+          <div class="sleek-actions-row" style="margin-top: .6rem;">
+            <!-- We’ll wire this in JS later to auto-complete -->
+            <a href="rating.html" class="cta cta-primary small">
+              Complete job
+            </a>
+            <a href="browse-gigs.html" class="cta cta-ghost small">
+              Browse more gigs
+            </a>
+          </div>
+        </article>
+
+        <!-- Profile quick link -->
+        <article class="sleek-card">
+          <h2>Your profile</h2>
+          <p class="sleek-desc">
+            Update your skills, availability, and preferences.
+          </p>
+          <div class="sleek-actions-row">
+            <a href="runner-profile.html" class="cta cta-ghost small">
+              View / edit profile
+            </a>
+          </div>
+        </article>
+
+        <!-- Future section -->
+        <article class="sleek-card">
+          <h2>Upcoming matching</h2>
+          <p class="sleek-desc muted">
+            Personalized matches + notifications coming soon.
+          </p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">© 2025 Gigga</footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
