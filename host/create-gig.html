@@ -4,38 +4,38 @@
   <meta charset="UTF-8" />
   <title>Post a Gig – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../content/styles.css" />
+  <link rel="icon" href="../content/favicon.ico" />
 </head>
 
 <body class="sleek-app page-create">
   <!-- Sleek top nav -->
   <header class="landing-nav">
-  <a href="index.html" class="landing-logo">Gigga</a>
+    <a href="../index.html" class="landing-logo">Gigga</a>
 
-  <!-- ADD THIS hamburger button -->
-  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-  </button>
+    <!-- Hamburger button (mobile only) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
-  <!-- your EXISTING desktop links stay exactly the same -->
-  <nav class="landing-links">
-    <a href="index.html" class="landing-link">Home</a>
-    <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-    <a href="create-gig.html" class="landing-link">Post a Gig</a>
-    <a href="login.html" class="landing-link">Log in</a>
-  </nav>
+    <!-- Desktop links -->
+    <nav class="landing-links">
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link active">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
+    </nav>
 
-  <!-- ADD THIS mobile panel (copy same links; no new ones) -->
-  <nav class="mobile-panel" aria-hidden="true">
-    <a href="index.html" class="landing-link">Home</a>
-    <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-    <a href="create-gig.html" class="landing-link">Post a Gig</a>
-    <a href="login.html" class="landing-link">Log in</a>
-  </nav>
-</header>
-
+    <!-- Mobile panel -->
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="create-gig.html" class="landing-link active">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
 
   <main class="sleek-main">
     <div class="bg-orb orb-1"></div>
@@ -148,7 +148,7 @@
           <button class="cta cta-primary" type="submit">
             Submit gig
           </button>
-          <a class="cta cta-ghost" href="index.html">
+          <a class="cta cta-ghost" href="../index.html">
             Cancel
           </a>
         </div>
@@ -162,6 +162,6 @@
 
   <footer class="landing-footer">© 2025 Gigga</footer>
 
-  <script src="script.js"></script>
+  <script src="../script.js" defer></script>
 </body>
 </html>

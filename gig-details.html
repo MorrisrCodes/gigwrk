@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <title>Gig Details – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="content/styles.css" />
+  <link rel="icon" href="content/favicon.ico" />
 </head>
 
 <body class="sleek-app page-details">
@@ -13,23 +14,26 @@
   <header class="landing-nav">
     <a href="index.html" class="landing-logo">Gigga</a>
 
+    <!-- Hamburger (mobile only) -->
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
     </button>
 
+    <!-- Desktop links -->
     <nav class="landing-links">
       <a href="index.html" class="landing-link">Home</a>
       <a href="browse-gigs.html" class="landing-link active">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="host/create-gig.html" class="landing-link">Post a Gig</a>
       <a href="login.html" class="landing-link">Log in</a>
     </nav>
 
+    <!-- Mobile dropdown -->
     <nav class="mobile-panel" aria-hidden="true">
       <a href="index.html" class="landing-link">Home</a>
       <a href="browse-gigs.html" class="landing-link active">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="host/create-gig.html" class="landing-link">Post a Gig</a>
       <a href="login.html" class="landing-link">Log in</a>
     </nav>
   </header>
@@ -68,8 +72,13 @@
         <article class="sleek-card">
           <h2>Actions</h2>
           <div class="sleek-actions-row">
-            <button class="cta cta-primary small">Apply</button>
-            <a class="cta cta-ghost small" href="browse-gigs.html">Back</a>
+            <!-- Demo flow: apply auto-accepts and takes you to dashboard -->
+            <a class="cta cta-primary small" href="runner/runner-dashboard.html">
+              Apply (demo)
+            </a>
+            <a class="cta cta-ghost small" href="browse-gigs.html">
+              Back
+            </a>
           </div>
         </article>
       </div>

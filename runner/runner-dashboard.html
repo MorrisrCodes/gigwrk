@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <title>Gig Runner Dashboard – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../content/styles.css" />
+  <link rel="icon" href="../content/favicon.ico" />
 </head>
 
 <body class="sleek-app page-dashboard">
 
-  <!-- Sleek header (same as your other sleek pages) -->
+  <!-- Sleek header -->
   <header class="landing-nav">
-    <a href="index.html" class="landing-logo">Gigga</a>
+    <a href="../index.html" class="landing-logo">Gigga</a>
 
     <!-- Hamburger (mobile only) -->
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -22,18 +23,18 @@
 
     <!-- Desktop links -->
     <nav class="landing-links">
-      <a href="index.html" class="landing-link">Home</a>
-      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
-      <a href="login.html" class="landing-link">Log in</a>
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
     </nav>
 
     <!-- Mobile dropdown -->
     <nav class="mobile-panel" aria-hidden="true">
-      <a href="index.html" class="landing-link">Home</a>
-      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
-      <a href="login.html" class="landing-link">Log in</a>
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
     </nav>
   </header>
 
@@ -65,8 +66,7 @@
             <span class="sleek-badge open">Accepted</span>
           </div>
 
-          <!-- DEMO PLACEHOLDER CONTENT
-               Next step we’ll fill this from localStorage -->
+          <!-- Demo placeholder -->
           <p class="sleek-meta">
             Help moving a couch • Midtown Atlanta • Thu 4–6pm
           </p>
@@ -82,11 +82,10 @@
           </div>
 
           <div class="sleek-actions-row" style="margin-top: .6rem;">
-            <!-- We’ll wire this in JS later to auto-complete -->
-            <a href="rating.html" class="cta cta-primary small">
+            <a href="../rating.html" class="cta cta-primary small">
               Complete job
             </a>
-            <a href="browse-gigs.html" class="cta cta-ghost small">
+            <a href="../browse-gigs.html" class="cta cta-ghost small">
               Browse more gigs
             </a>
           </div>
@@ -119,6 +118,6 @@
 
   <footer class="landing-footer">© 2025 Gigga</footer>
 
-  <script src="script.js" defer></script>
+  <script src="../script.js" defer></script>
 </body>
 </html>

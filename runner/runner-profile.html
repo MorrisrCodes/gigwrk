@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <title>Gig Runner Profile – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../content/styles.css" />
+  <link rel="icon" href="../content/favicon.ico" />
 </head>
 
 <body class="sleek-app page-profile">
 
   <!-- Sleek header -->
   <header class="landing-nav">
-    <a href="index.html" class="landing-logo">Gigga</a>
+    <a href="../index.html" class="landing-logo">Gigga</a>
 
     <!-- Hamburger (mobile only) -->
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -20,20 +21,20 @@
       <span class="nav-toggle-bar"></span>
     </button>
 
-    <!-- Desktop links (same as your other pages) -->
+    <!-- Desktop links -->
     <nav class="landing-links">
-      <a href="index.html" class="landing-link">Home</a>
-      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
-      <a href="login.html" class="landing-link">Log in</a>
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
     </nav>
 
     <!-- Mobile dropdown -->
     <nav class="mobile-panel" aria-hidden="true">
-      <a href="index.html" class="landing-link">Home</a>
-      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
-      <a href="login.html" class="landing-link">Log in</a>
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
     </nav>
   </header>
 
@@ -57,7 +58,7 @@
 
       <form
         class="sleek-form"
-        onsubmit="event.preventDefault(); location.href='browse-gigs.html';"
+        onsubmit="event.preventDefault(); location.href='../browse-gigs.html';"
       >
         <div class="sleek-grid">
 
@@ -100,7 +101,7 @@
 
         <div class="sleek-actions">
           <button class="cta cta-primary" type="submit">Save profile</button>
-          <a href="browse-gigs.html" class="cta cta-ghost">Cancel</a>
+          <a href="../browse-gigs.html" class="cta cta-ghost">Cancel</a>
         </div>
 
         <p class="sleek-footnote">
@@ -110,4 +111,8 @@
     </section>
   </main>
 
-  <footer class="landing-footer
+  <footer class="landing-footer">© 2025 Gigga</footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

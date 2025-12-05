@@ -4,16 +4,35 @@
   <meta charset="UTF-8" />
   <title>Log in – Gigga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="content/styles.css" />
+  <link rel="icon" href="content/favicon.ico" />
 </head>
 
 <body class="sleek-app page-auth">
+
   <header class="landing-nav">
     <a href="index.html" class="landing-logo">Gigga</a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <!-- Desktop links -->
     <nav class="landing-links">
       <a href="index.html" class="landing-link">Home</a>
       <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
-      <a href="create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link active">Log in</a>
+    </nav>
+
+    <!-- Mobile panel -->
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="host/create-gig.html" class="landing-link">Post a Gig</a>
       <a href="login.html" class="landing-link active">Log in</a>
     </nav>
   </header>
@@ -43,10 +62,10 @@
         </label>
 
         <div class="auth-actions">
-          <a href="runner-profile.html" class="cta cta-primary full">
+          <a href="runner/runner-profile.html" class="cta cta-primary full">
             Log in as Gig Runner
           </a>
-          <a href="host-dashboard.html" class="cta cta-ghost full">
+          <a href="host/host-dashboard.html" class="cta cta-ghost full">
             Log in as Gig Host
           </a>
         </div>
@@ -54,9 +73,9 @@
         <div class="auth-footer">
           <p>
             New here?
-            <a href="signup-host.html">Become a Gig Host</a>
+            <a href="host/signup-host.html">Become a Gig Host</a>
             or
-            <a href="signup-runner.html">Become a Gig Runner</a>.
+            <a href="runner/signup-runner.html">Become a Gig Runner</a>.
           </p>
         </div>
       </form>
@@ -64,5 +83,7 @@
   </main>
 
   <footer class="landing-footer">© 2025 Gigga</footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
