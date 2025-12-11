@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moderator – Gigga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Adjust this path if moderator.html lives at root instead of a subfolder -->
+  <link rel="stylesheet" href="../content/styles.css" />
+  <link rel="icon" href="../content/favicon.ico" />
+</head>
+
+<body class="sleek-app page-admin">
+  <!-- Shared sleek top nav -->
+  <header class="landing-nav">
+    <a href="../index.html" class="landing-logo">Gigga</a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <!-- Desktop links -->
+    <nav class="landing-links">
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
+    </nav>
+
+    <!-- Mobile dropdown -->
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="sleek-main">
+    <!-- Background layers -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <section class="sleek-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">MODERATOR</p>
+          <h1 class="sleek-title">Moderator tools</h1>
+          <p class="sleek-subtitle">
+            Review accounts, verify contact info, and keep gigs & profiles clean (demo only).
+          </p>
+        </div>
+        <div class="sleek-pill">Demo</div>
+      </header>
+
+      <div class="sleek-list">
+        <!-- Verification queue -->
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Account verification queue</h2>
+            <span class="sleek-badge open">Pending</span>
+          </div>
+          <p class="sleek-desc">
+            New Client and Worker accounts that need basic checks before they’re fully active.
+          </p>
+          <div class="sleek-actions-row">
+            <button type="button" class="cta cta-ghost small">
+              Review hosts
+            </button>
+            <button type="button" class="cta cta-ghost small">
+              Review runners
+            </button>
+          </div>
+        </article>
+
+        <!-- Phone / email verification -->
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Phone &amp; email verification</h2>
+          </div>
+          <p class="sleek-desc">
+            Track verification attempts, re-send codes, and mark trusted accounts as verified.
+          </p>
+          <div class="sleek-actions-row">
+            <button type="button" class="cta cta-ghost small">
+              Verification attempts
+            </button>
+            <button type="button" class="cta cta-ghost small">
+              Re-send / override (demo)
+            </button>
+          </div>
+        </article>
+
+        <!-- Profile moderation -->
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Profile moderation</h2>
+          </div>
+          <p class="sleek-desc">
+            Review and edit Client & Worker profiles when something looks off or is reported.
+          </p>
+          <div class="sleek-actions-row">
+            <button type="button" class="cta cta-ghost small">
+              Flagged profiles
+            </button>
+            <button type="button" class="cta cta-ghost small">
+              Recent edits
+            </button>
+          </div>
+        </article>
+
+        <!-- Task / content moderation -->
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Task &amp; content review</h2>
+          </div>
+          <p class="sleek-desc">
+            Handle “Other tasks” that failed safety rules, plus gigs or messages flagged by users.
+          </p>
+          <div class="sleek-actions-row">
+            <button type="button" class="cta cta-ghost small">
+              Flagged gigs
+            </button>
+            <button type="button" class="cta cta-ghost small">
+              Flagged chat messages
+            </button>
+          </div>
+        </article>
+
+        <!-- Escalation to admin -->
+        <article class="sleek-card">
+          <div class="sleek-card-top">
+            <h2>Escalations</h2>
+          </div>
+          <p class="sleek-desc muted">
+            For payment disputes, serious safety issues, or bans, escalate to the main admin dashboard.
+          </p>
+          <div class="sleek-actions-row">
+            <a href="admin.html" class="cta cta-ghost small">
+              Open admin dashboard
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">© 2025 Gigga</footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>
