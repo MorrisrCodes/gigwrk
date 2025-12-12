@@ -1472,3 +1472,242 @@ body.sleek-app .landing-footer {
   margin: 0;
 }
 
+/* ================================
+   CHAT PAGE (MVP)
+   ================================ */
+
+.chat-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 1rem;
+  min-height: 420px;
+}
+
+.chat-sidebar {
+  background: rgba(7, 11, 18, 0.95);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.chat-sidebar-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(226,232,240,0.8);
+}
+
+.chat-thread-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.3rem;
+}
+
+.chat-thread-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: 0.16s ease;
+  font-size: 0.85rem;
+}
+
+.chat-thread-pill strong {
+  font-size: 0.86rem;
+}
+
+.chat-thread-pill span {
+  font-size: 0.78rem;
+  color: rgba(226,232,240,0.7);
+}
+
+.chat-thread-pill:hover {
+  background: rgba(15,23,42,0.9);
+  border-color: rgba(148,163,184,0.7);
+}
+
+.chat-thread-pill.active {
+  background: rgba(15,23,42,0.95);
+  border-color: rgba(56,189,248,0.9);
+}
+
+/* Main chat pane */
+
+.chat-main {
+  background: rgba(7, 11, 18, 0.97);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.chat-main-header {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-main-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-main-title strong {
+  font-size: 0.96rem;
+}
+
+.chat-main-title span {
+  font-size: 0.8rem;
+  color: rgba(226,232,240,0.7);
+}
+
+/* Messages */
+
+.chat-messages {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  position: relative;
+}
+
+.chat-bubble-meta {
+  font-size: 0.72rem;
+  opacity: 0.7;
+  margin-top: 0.16rem;
+}
+
+/* host = client, runner = worker */
+
+.chat-bubble.host {
+  align-self: flex-start;
+  background: rgba(15,23,42,0.95);
+  border: 1px solid rgba(148,163,184,0.7);
+}
+
+.chat-bubble.runner {
+  align-self: flex-end;
+  background: rgba(56,189,248,0.12);
+  border: 1px solid rgba(56,189,248,0.8);
+}
+
+/* Input row */
+
+.chat-input-row {
+  padding: 0.7rem 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.chat-input-row input[type="text"] {
+  flex: 1;
+  background: rgba(15,23,42,0.98);
+  border-radius: 999px;
+  border: 1px solid rgba(55,65,81,0.9);
+  padding: 0.55rem 0.8rem;
+  color: #eef2ff;
+  font: inherit;
+  outline: none;
+  transition: 0.16s ease;
+}
+
+.chat-input-row input[type="text"]:focus {
+  border-color: rgba(56,189,248,0.9);
+  box-shadow: 0 0 0 1px rgba(56,189,248,0.5);
+}
+
+/* Make send button smaller but consistent with CTAs */
+
+.chat-input-row .cta.small {
+  flex-shrink: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .chat-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .chat-sidebar {
+    order: -1;
+  }
+}
+
+/* ================================
+   RATINGS (STARS + REVIEW)
+   ================================ */
+
+.rating-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rating-stars {
+  display: inline-flex;
+  flex-direction: row-reverse; /* so hovering a star highlights all to its left */
+  justify-content: flex-start;
+  gap: 0.1rem;
+}
+
+.rating-stars input {
+  display: none;
+}
+
+.rating-stars label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  user-select: none;
+  color: rgba(148,163,184,0.6);
+  transition: color 0.15s ease-out, transform 0.15s ease-out;
+}
+
+/* hover state */
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+/* checked state */
+.rating-stars input:checked ~ label {
+  color: #38bdf8;
+}
+
+/* small tag under stars */
+.rating-hint {
+  font-size: 0.8rem;
+  color: rgba(226,232,240,0.8);
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat – Gigga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="content/styles.css" />
+  <link rel="icon" href="content/favicon.ico" />
+</head>
+
+<body class="sleek-app page-chat">
+  <!-- Sleek top nav -->
+  <header class="landing-nav">
+    <a href="index.html" class="landing-logo">Gigga</a>
+
+    <!-- Hamburger button (mobile only) -->
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <!-- Desktop links -->
+    <nav class="landing-links">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+
+    <!-- Mobile panel -->
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="index.html" class="landing-link">Home</a>
+      <a href="browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="sleek-main">
+    <!-- Background -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <section class="sleek-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">MESSAGING</p>
+          <h1 class="sleek-title">Chat</h1>
+          <p class="sleek-subtitle">
+            Temporary chat channel for a single job. For now this is UI-only with a working input box.
+          </p>
+        </div>
+        <div class="sleek-pill">Demo</div>
+      </header>
+
+      <div class="chat-layout">
+        <!-- Sidebar: conversations list -->
+        <aside class="chat-sidebar">
+          <div class="chat-sidebar-header">
+            <div class="chat-sidebar-title">Conversations</div>
+            <span class="sleek-pill" style="font-size:.7rem;padding:.18rem .5rem;">
+              UI only
+            </span>
+          </div>
+
+          <div class="chat-thread-list">
+            <button class="chat-thread-pill active" type="button">
+              <strong>Help moving a couch</strong>
+              <span>With Alex (Gig Runner) • Today</span>
+            </button>
+
+            <button class="chat-thread-pill" type="button">
+              <strong>Yard clean-up Saturday</strong>
+              <span>With Jordan (Gig Runner)</span>
+            </button>
+
+            <button class="chat-thread-pill" type="button">
+              <strong>Errands & drop-off</strong>
+              <span>With Taylor (Gig Host)</span>
+            </button>
+          </div>
+
+          <p class="sleek-footnote" style="margin-top:.7rem;">
+            In the real app, each chat is tied to a specific job and closes after it’s completed.
+          </p>
+        </aside>
+
+        <!-- Main chat pane -->
+        <section class="chat-main" aria-label="Chat thread">
+          <header class="chat-main-header">
+            <div class="chat-main-title">
+              <strong>Help moving a couch</strong>
+              <span>Host ↔ Runner • Thu 4–6pm • Midtown Atlanta</span>
+            </div>
+            <span class="sleek-pill" style="font-size:.72rem;">Demo thread</span>
+          </header>
+
+          <!-- Messages -->
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble host">
+              Hey! I’m in the building with the blue awning. There’s a small loading area out front.
+              <div class="chat-bubble-meta">You • 3:12 pm</div>
+            </div>
+
+            <div class="chat-bubble runner">
+              Got it, I’m parking now. I’ll text when I’m at the door if the buzzer doesn’t work.
+              <div class="chat-bubble-meta">Runner • 3:13 pm</div>
+            </div>
+
+            <div class="chat-bubble host">
+              Perfect. The couch is on the 3rd floor, elevator works but it’s a bit tight.
+              <div class="chat-bubble-meta">You • 3:14 pm</div>
+            </div>
+          </div>
+
+          <!-- Input row -->
+          <form class="chat-input-row" id="chatForm">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type a message… (demo only, not sent)"
+              autocomplete="off"
+            />
+            <button type="submit" class="cta cta-primary small">
+              Send
+            </button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">© 2025 Gigga</footer>
+
+  <script src="script.js" defer></script>
+
+  <!-- Page-specific chat demo script -->
+  <script>
+    (function () {
+      const form = document.getElementById("chatForm");
+      const input = document.getElementById("chatInput");
+      const messages = document.getElementById("chatMessages");
+
+      if (!form || !input || !messages) return;
+
+      function addMessage(text) {
+        if (!text.trim()) return;
+
+        const bubble = document.createElement("div");
+        bubble.className = "chat-bubble host";
+
+        const now = new Date();
+        const time = now.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+
+        bubble.innerHTML = `
+          ${text
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")}
+          <div class="chat-bubble-meta">You • ${time}</div>
+        `;
+
+        messages.appendChild(bubble);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const value = input.value;
+        if (!value.trim()) return;
+        addMessage(value);
+        input.value = "";
+      });
+
+      // Ensure initial scroll is at bottom
+      messages.scrollTop = messages.scrollHeight;
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rate Your Host – Gigga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../content/styles.css" />
+  <link rel="icon" href="../content/favicon.ico" />
+</head>
+
+<body class="sleek-app page-rating">
+
+  <header class="landing-nav">
+    <a href="../index.html" class="landing-logo">Gigga</a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav class="landing-links">
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
+    </nav>
+
+    <nav class="mobile-panel" aria-hidden="true">
+      <a href="../index.html" class="landing-link">Home</a>
+      <a href="../browse-gigs.html" class="landing-link">Browse Gigs</a>
+      <a href="../host/create-gig.html" class="landing-link">Post a Gig</a>
+      <a href="../login.html" class="landing-link">Log in</a>
+    </nav>
+  </header>
+
+  <main class="sleek-main auth-main">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+
+    <section class="sleek-shell auth-shell">
+      <header class="sleek-header">
+        <div>
+          <p class="sleek-eyebrow">RATE YOUR HOST</p>
+          <h1 class="sleek-title">How was the host?</h1>
+          <p class="sleek-subtitle">
+            This rating is attached to the host’s profile, to help other runners know what to expect.
+          </p>
+        </div>
+        <div class="sleek-pill">Runner → Host</div>
+      </header>
+
+      <form
+        class="sleek-form"
+        id="rateHostForm"
+        onsubmit="event.preventDefault(); location.href='runner-dashboard.html';"
+      >
+        <div class="sleek-grid">
+          <!-- Job summary (demo) -->
+          <article class="sleek-card" style="grid-column:1/-1;">
+            <h2>Help moving a couch</h2>
+            <p class="sleek-meta">
+              Host: Jamie L. • Thu 4–6pm • Midtown Atlanta • $60 flat
+            </p>
+            <p class="sleek-desc">
+              In the full app, you’d see the exact job and host you just finished working with.
+            </p>
+          </article>
+
+          <!-- Overall rating -->
+          <label class="sleek-field full">
+            <span>Overall experience with this host</span>
+            <div class="rating-row">
+              <div class="rating-stars">
+                <!-- reversed order for the CSS trick -->
+                <input type="radio" name="rating" id="hostStar5" value="5" required />
+                <label for="hostStar5" title="Excellent">★</label>
+                <input type="radio" name="rating" id="hostStar4" value="4" />
+                <label for="hostStar4" title="Good">★</label>
+                <input type="radio" name="rating" id="hostStar3" value="3" />
+                <label for="hostStar3" title="Okay">★</label>
+                <input type="radio" name="rating" id="hostStar2" value="2" />
+                <label for="hostStar2" title="Not great">★</label>
+                <input type="radio" name="rating" id="hostStar1" value="1" />
+                <label for="hostStar1" title="Very poor">★</label>
+              </div>
+              <div class="rating-hint">
+                Think about clarity, respect, safety, and how well the job matched the description.
+              </div>
+            </div>
+          </label>
+
+          <!-- Text review -->
+          <label class="sleek-field full">
+            <span>Short review (optional)</span>
+            <textarea
+              id="hostReview"
+              rows="4"
+              placeholder="Was the job as described? Were they respectful and easy to work with?"
+            ></textarea>
+          </label>
+
+          <!-- Would you work with them again -->
+          <label class="sleek-field full">
+            <span>Would you work with this host again?</span>
+            <select id="hostAgain">
+              <option value="">Select an answer (optional)</option>
+              <option value="yes">Yes, happily</option>
+              <option value="maybe">Maybe / depends</option>
+              <option value="no">Probably not</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="sleek-actions">
+          <button class="cta cta-primary" type="submit">
+            Submit rating
+          </button>
+          <a href="runner-dashboard.html" class="cta cta-ghost">
+            Skip for now
+          </a>
+        </div>
+
+        <p class="sleek-footnote">
+          Demo only — later, this will feed into a host rating and review surface, so runners can avoid bad experiences.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="landing-footer">© 2025 Gigga</footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>
