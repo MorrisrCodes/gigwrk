@@ -46,15 +46,17 @@
           <p class="sleek-eyebrow">GIG HOST</p>
           <h1 class="sleek-title">Your profile</h1>
           <p class="sleek-subtitle">
-            This is UI-only for now — just shaping the flow.
+            This is where onboarding happens: add contact info, photo, location, and what you usually need help with.
           </p>
         </div>
         <div class="sleek-pill">Demo</div>
       </header>
 
-      <form class="sleek-form" onsubmit="event.preventDefault(); location.href='host-dashboard.html';">
-        <div class="sleek-grid">
+      <form class="sleek-form"
+            onsubmit="event.preventDefault(); location.href='host-dashboard.html';">
 
+        <div class="sleek-grid">
+          <!-- Basic info -->
           <label class="sleek-field">
             <span>Full name</span>
             <input type="text" placeholder="Your name" required />
@@ -65,19 +67,111 @@
             <input type="email" placeholder="you@email.com" required />
           </label>
 
+          <label class="sleek-field">
+            <span>Phone</span>
+            <input type="tel" placeholder="(555) 555-5555" />
+          </label>
+
+          <!-- Profile photo -->
+          <label class="sleek-field">
+            <span>Profile photo</span>
+            <input type="file" id="hostPhoto" accept="image/*" />
+            <div style="margin-top:0.6rem;">
+              <img
+                id="hostPhotoPreview"
+                alt="Profile preview"
+                style="display:none;width:72px;height:72px;border-radius:999px;object-fit:cover;border:1px solid rgba(255,255,255,0.14);"
+              />
+            </div>
+            <p class="sleek-footnote">
+              Optional for now — this only lives in the browser in this demo.
+            </p>
+          </label>
+
+          <!-- Location + browser permission -->
           <label class="sleek-field full">
             <span>Location</span>
-            <input type="text" placeholder="City, state or neighborhood" />
+            <input
+              type="text"
+              id="hostLocation"
+              placeholder="City, neighborhood or coordinates"
+            />
+            <button
+              type="button"
+              class="cta cta-ghost small"
+              id="hostUseLocation"
+              style="margin-top:0.4rem;"
+            >
+              Use my location (demo)
+            </button>
+            <p class="sleek-footnote" id="hostLocationStatus">
+              We’ll ask your browser for permission. In this MVP, location is not stored.
+            </p>
           </label>
 
+          <!-- Tasks they commonly need -->
           <label class="sleek-field full">
             <span>What kind of help do you usually need?</span>
-            <textarea rows="4" placeholder="Moving help, errands, admin, pet care, etc."></textarea>
+            <div class="task-grid">
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="moving" />
+                <span>Moving help</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="lifting" />
+                <span>Lifting furniture</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="setup" />
+                <span>Setup / breakdown</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="yard" />
+                <span>Yard work</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="cleanouts" />
+                <span>Cleanouts</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="errands" />
+                <span>Errands</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="seasonal" />
+                <span>Seasonal tasks</span>
+              </label>
+              <label class="task-pill">
+                <input type="checkbox" name="hostTasks" value="other" />
+                <span>Other tasks</span>
+              </label>
+            </div>
+            <input
+              type="text"
+              style="margin-top:0.5rem;"
+              placeholder="Custom tasks (e.g., pet care, event help)"
+            />
+            <p class="sleek-footnote">
+              Matching will use this later to suggest the right Gig Runners.
+            </p>
           </label>
 
+          <!-- Optional typical budget range -->
+          <label class="sleek-field full">
+            <span>Typical budget range (optional)</span>
+            <div class="sleek-pay">
+              <input type="number" min="0" placeholder="Min $ / hr or flat" />
+              <input type="number" min="0" placeholder="Max $ / hr or flat" />
+            </div>
+          </label>
+
+          <!-- Notes / preferences -->
           <label class="sleek-field full">
             <span>Notes / preferences</span>
-            <textarea rows="3" placeholder="Anything runners should know?"></textarea>
+            <textarea
+              rows="3"
+              placeholder="Building access, parking notes, preferred times, etc."
+            ></textarea>
           </label>
         </div>
 
@@ -85,12 +179,69 @@
           <button class="cta cta-primary" type="submit">Save profile</button>
           <a href="host-dashboard.html" class="cta cta-ghost">Cancel</a>
         </div>
+
+        <p class="sleek-footnote">
+          Demo only — nothing is persisted yet, this just shapes the onboarding flow.
+        </p>
       </form>
 
     </section>
   </main>
 
   <footer class="landing-footer">© 2025 Gigga</footer>
+
   <script src="../script.js" defer></script>
+
+  <!-- Page-specific JS for photo + location -->
+  <script>
+    (function () {
+      // photo preview
+      const fileInput = document.getElementById("hostPhoto");
+      const preview = document.getElementById("hostPhotoPreview");
+
+      if (fileInput && preview) {
+        fileInput.addEventListener("change", () => {
+          const file = fileInput.files[0];
+          if (!file) {
+            preview.style.display = "none";
+            preview.removeAttribute("src");
+            return;
+          }
+          const url = URL.createObjectURL(file);
+          preview.src = url;
+          preview.style.display = "block";
+        });
+      }
+
+      // geolocation (demo)
+      const btn = document.getElementById("hostUseLocation");
+      const input = document.getElementById("hostLocation");
+      const status = document.getElementById("hostLocationStatus");
+
+      if (btn && input && status) {
+        btn.addEventListener("click", () => {
+          if (!navigator.geolocation) {
+            status.textContent = "Geolocation is not supported in this browser.";
+            return;
+          }
+
+          status.textContent = "Requesting location from your browser…";
+
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const { latitude, longitude } = pos.coords;
+              input.value = latitude.toFixed(5) + ", " + longitude.toFixed(5) + " (demo)";
+              status.textContent = "Location captured (demo only, not stored).";
+            },
+            () => {
+              status.textContent =
+                "Couldn’t access your location. You may have denied permission.";
+            },
+            { timeout: 10000 }
+          );
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

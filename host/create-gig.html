@@ -49,7 +49,7 @@
           <p class="sleek-eyebrow">GIG HOST</p>
           <h1 class="sleek-title">Post a gig</h1>
           <p class="sleek-subtitle">
-            Share what you need help with. Matching comes soon.
+            Job creation: choose a category or custom task, add details, budget, address, and time window.
           </p>
         </div>
 
@@ -58,39 +58,107 @@
 
       <form class="sleek-form" id="createGigForm">
         <div class="sleek-grid">
+          <!-- Title -->
           <label class="sleek-field">
             <span>Gig title</span>
             <input
               type="text"
               name="title"
+              id="gigTitle"
               placeholder="e.g., Move a couch tomorrow"
               required
             />
           </label>
 
+          <!-- Address + location perms -->
           <label class="sleek-field">
-            <span>Location</span>
+            <span>Address / location</span>
             <input
               type="text"
               name="location"
-              placeholder="Remote, Atlanta, GA, etc."
+              id="gigLocation"
+              placeholder="Exact address, building, or general area"
               required
             />
+            <button
+              type="button"
+              class="cta cta-ghost small"
+              id="gigUseLocation"
+              style="margin-top:0.4rem;"
+            >
+              Use my location (demo)
+            </button>
+            <p class="sleek-footnote" id="gigLocationStatus">
+              We’ll request your browser’s location. In this MVP nothing is stored.
+            </p>
           </label>
 
+          <!-- Task category (preset + custom) -->
+          <label class="sleek-field full">
+            <span>Task category</span>
+            <div class="task-grid" id="gigCategoryGroup">
+              <label class="task-pill">
+                <input type="radio" name="category" value="moving" required />
+                <span>Moving help</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="lifting" />
+                <span>Lifting furniture</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="setup" />
+                <span>Setup</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="yard" />
+                <span>Yard work</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="cleanouts" />
+                <span>Cleanouts</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="errands" />
+                <span>Errands</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="seasonal" />
+                <span>Seasonal tasks</span>
+              </label>
+              <label class="task-pill">
+                <input type="radio" name="category" value="other" />
+                <span>Other / custom</span>
+              </label>
+            </div>
+            <input
+              type="text"
+              id="gigCustomCategory"
+              name="customCategory"
+              style="margin-top:0.5rem; display:none;"
+              placeholder="Custom task name (e.g., holiday tree delivery, pet transport)"
+            />
+            <p class="sleek-footnote">
+              Pick a preset, or choose “Other / custom” and name your own task. Custom tasks
+              are grouped under “Other tasks” for now.
+            </p>
+          </label>
+
+          <!-- Date / time window -->
           <label class="sleek-field">
-            <span>Date / schedule</span>
+            <span>Date / time window</span>
             <input
               type="text"
               name="schedule"
+              id="gigSchedule"
               placeholder="Thu 4–6pm • or • Dec 5, 6–11pm"
               required
             />
           </label>
 
+          <!-- Type -->
           <label class="sleek-field">
             <span>Type</span>
-            <select name="type" required>
+            <select name="type" id="gigType" required>
               <option value="">Select type</option>
               <option value="onsite">On-site</option>
               <option value="remote">Remote</option>
@@ -98,17 +166,31 @@
             </select>
           </label>
 
+          <!-- Budget / price range -->
           <label class="sleek-field">
-            <span>Pay (optional)</span>
+            <span>Budget / price range</span>
             <div class="sleek-pay">
-              <input type="number" name="payMin" min="0" placeholder="Min $" />
-              <input type="number" name="payMax" min="0" placeholder="Max $" />
+              <input
+                type="number"
+                name="payMin"
+                id="gigPayMin"
+                min="0"
+                placeholder="Min $"
+              />
+              <input
+                type="number"
+                name="payMax"
+                id="gigPayMax"
+                min="0"
+                placeholder="Max $"
+              />
             </div>
           </label>
 
+          <!-- Urgency -->
           <label class="sleek-field">
             <span>Urgency</span>
-            <select name="urgency">
+            <select name="urgency" id="gigUrgency">
               <option value="normal">Normal</option>
               <option value="soon">Soon</option>
               <option value="asap">ASAP</option>
@@ -116,33 +198,45 @@
           </label>
         </div>
 
+        <!-- Description -->
         <label class="sleek-field full">
           <span>Description</span>
           <textarea
             name="description"
+            id="gigDescription"
             rows="4"
-            placeholder="What needs to get done? Be clear and simple."
+            placeholder="What needs to get done? Include access notes, parking, stairs/elevator, etc."
             required
           ></textarea>
         </label>
 
+        <!-- Skills preferred -->
         <label class="sleek-field full">
           <span>Skills preferred (optional)</span>
           <input
             type="text"
             name="skills"
-            placeholder="lifting, admin, photography, etc."
+            id="gigSkills"
+            placeholder="e.g., lifting, admin, careful driver, dog-friendly"
           />
         </label>
 
+        <!-- Personality -->
         <label class="sleek-field full">
           <span>Personality fit (optional)</span>
           <input
             type="text"
             name="personality"
+            id="gigPersonality"
             placeholder="friendly, calm, detail-oriented…"
           />
         </label>
+
+        <!-- Safety note -->
+        <p class="sleek-footnote" id="gigSafetyNote">
+          We run a simple rule-based safety check on custom tasks (demo only). In a full app,
+          anything that looks risky would go to a moderator before it’s visible.
+        </p>
 
         <div class="sleek-actions">
           <button class="cta cta-primary" type="submit">
@@ -154,7 +248,7 @@
         </div>
 
         <p class="sleek-footnote">
-          Demo only — submission redirects but doesn’t save yet.
+          Demo only — submission redirects to a confirmation screen and doesn’t save yet.
         </p>
       </form>
     </section>
@@ -163,5 +257,105 @@
   <footer class="landing-footer">© 2025 Gigga</footer>
 
   <script src="../script.js" defer></script>
+
+  <!-- Page-specific logic: category toggle, geolocation, safety flag -->
+  <script>
+    (function () {
+      // ===== Custom category show/hide =====
+      const categoryRadios = document.querySelectorAll(
+        'input[name="category"]'
+      );
+      const customCategoryInput = document.getElementById("gigCustomCategory");
+
+      function updateCustomCategoryVisibility() {
+        const selected = document.querySelector(
+          'input[name="category"]:checked'
+        );
+        if (!selected) return;
+        if (selected.value === "other") {
+          customCategoryInput.style.display = "block";
+          customCategoryInput.required = true;
+        } else {
+          customCategoryInput.style.display = "none";
+          customCategoryInput.required = false;
+          customCategoryInput.value = "";
+        }
+      }
+
+      categoryRadios.forEach((r) => {
+        r.addEventListener("change", updateCustomCategoryVisibility);
+      });
+      updateCustomCategoryVisibility();
+
+      // ===== Geolocation (demo) =====
+      const locBtn = document.getElementById("gigUseLocation");
+      const locInput = document.getElementById("gigLocation");
+      const locStatus = document.getElementById("gigLocationStatus");
+
+      if (locBtn && locInput && locStatus) {
+        locBtn.addEventListener("click", () => {
+          if (!navigator.geolocation) {
+            locStatus.textContent =
+              "Geolocation is not supported in this browser.";
+            return;
+          }
+
+          locStatus.textContent = "Requesting location from your browser…";
+
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const { latitude, longitude } = pos.coords;
+              locInput.value =
+                latitude.toFixed(5) + ", " + longitude.toFixed(5) + " (demo)";
+              locStatus.textContent =
+                "Location captured (demo only, not stored).";
+            },
+            () => {
+              locStatus.textContent =
+                "Couldn’t access your location. You may have denied permission.";
+            },
+            { timeout: 10000 }
+          );
+        });
+      }
+
+      // ===== Basic safety filter (demo) =====
+      const form = document.getElementById("createGigForm");
+      const safetyNote = document.getElementById("gigSafetyNote");
+      const bannedWords = [
+        "weapon",
+        "weapons",
+        "gun",
+        "guns",
+        "drugs",
+        "drug",
+        "fraud",
+        "scam",
+        "explosive",
+        "explosives"
+      ];
+
+      if (form && safetyNote) {
+        form.addEventListener("submit", () => {
+          const title = (document.getElementById("gigTitle").value || "").toLowerCase();
+          const desc = (document.getElementById("gigDescription").value || "").toLowerCase();
+          const custom = (customCategoryInput.value || "").toLowerCase();
+
+          const text = title + " " + desc + " " + custom;
+          const hit = bannedWords.find((w) => text.includes(w));
+
+          if (hit) {
+            // Mark as flagged for the confirmation page
+            sessionStorage.setItem("giggaFlaggedTask", "1");
+            safetyNote.textContent =
+              "This gig triggered our basic safety filter (demo). In a full app it would be sent to moderators before going live.";
+          } else {
+            sessionStorage.removeItem("giggaFlaggedTask");
+          }
+          // We let the normal submit / redirect logic continue (handled in script.js)
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
