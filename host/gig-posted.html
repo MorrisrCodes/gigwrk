@@ -62,6 +62,9 @@
           For now, this just confirms the UI flow.
         </p>
 
+        <!-- Safety flag status (filled in by JS if needed) -->
+        <p class="sleek-footnote" id="flagStatus" style="margin-top:.5rem;"></p>
+
         <div class="sleek-actions-row" style="margin-top: .8rem;">
           <a href="../browse-gigs.html" class="cta cta-primary small">Browse gigs</a>
           <a href="create-gig.html" class="cta cta-ghost small">Post another</a>
@@ -75,5 +78,23 @@
   <footer class="landing-footer">© 2025 Gigga</footer>
 
   <script src="../script.js" defer></script>
+
+  <!-- Read the safety flag from sessionStorage (demo) -->
+  <script>
+    (function () {
+      const flagged = sessionStorage.getItem("giggaFlaggedTask");
+      const el = document.getElementById("flagStatus");
+      if (!el) return;
+
+      if (flagged === "1") {
+        el.textContent =
+          "Heads up: this gig triggered our basic safety filter. In a full version, it would go to a moderator queue before staying live (demo only).";
+      } else {
+        el.textContent = "";
+      }
+      // Optionally clear it so it doesn’t stick around
+      sessionStorage.removeItem("giggaFlaggedTask");
+    })();
+  </script>
 </body>
 </html>

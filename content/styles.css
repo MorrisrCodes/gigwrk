@@ -1448,3 +1448,27 @@ body.sleek-app .landing-footer {
   border-top: none !important; /* remove any hard seam line */
 }
 
+/* Task selection chips (used on host + runner profiles) */
+.task-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.task-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(7, 11, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.task-pill input {
+  margin: 0;
+}
+
